@@ -1,0 +1,97 @@
+@import "../../style.scss";
+
+.rightBar {
+  @include themify($themes) {
+    flex: 3;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    background-color: themed("bgSoft");
+
+    @include mobile {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: 20px;
+
+      .item {
+        -webkit-box-shadow: 1px 3px 10px -3px rgba(0, 0, 0, 0.91);
+        -moz-box-shadow: 1px 3px 10px -3px rgba(0, 0, 0, 0.91);
+        box-shadow: 1px 3px 10px -3px rgba(0, 0, 0, 0.91);
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: themed("bg");
+
+        span {
+          color: gray;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin: 20px 0px;
+
+          .userInfo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+
+            .online {
+              width: 12px;
+              height: 12px;
+              border-radius: 50%;
+              background-color: lime;
+              position: absolute;
+              top: 0;
+              left: 30px;
+            }
+
+            p {
+              color: themed("textColorsoft");
+            }
+            span {
+              font-weight: 500;
+              color: themed("textColor");
+            }
+          }
+
+          .buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button {
+              border: none;
+              padding: 5px;
+              color: gray;
+              cursor: pointer;
+
+              &:first-child {
+                background-color: rgb(84, 227, 182);
+                color: white;
+              }
+              &:last-child {
+                border-color: gray;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
